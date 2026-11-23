@@ -1,0 +1,25 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "cn.aatu.ui.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "SpellHotbarMixin",
+    "ChampionStyleMixin",
+    "ChampionBossEventMixin",
+    "OpenTypeFontMixin",
+    "OutlineGlyphMixin",
+    "SelectedGlyphMixin",
+    "ScaledTextMixin",
+    "SmoothFontSetMixin",
+    "MinecraftFontManagerAccessor",
+    "FontManagerRefreshMixin",
+    "BossLayoutMixin",
+    "ThirdPartyBossBarMixin",
+    "GuiSlotInvoker",
+    "OriginalHudLayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

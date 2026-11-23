@@ -1,0 +1,35 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.143'
+}
+
+group = 'cn.aatu.ui'
+version = mod_version
+base { archivesName = 'aatu-ui' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+    mods { aatu_ui { sourceSet(sourceSets.main) } }
+}
+
+repositories {
+    maven {
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+}
+
+dependencies {
+    compileOnly('maven.modrinth:spell-engine:IYoY9AHA') { transitive = false }
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.withType(Jar).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+processResources {
+    inputs.property('version', project.version)
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: project.version) }
+}

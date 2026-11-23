@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="aatu_ui"
+version="${version}"
+displayName="AaTu UI"
+authors="AaTu"
+description='''Client font and HUD customization.'''
+
+[[dependencies.aatu_ui]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.250,21.2)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.aatu_ui]]
+modId="spell_engine"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="CLIENT"
+
+[[mixins]]
+config="aatu_ui.mixins.json"
+
+[[dependencies.aatu_ui]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="CLIENT"
